@@ -51,6 +51,11 @@ public class PersonController {
     @ApiOperation(value = "Inclui uma pessoa", tags = "Pessoas")
     /** RequestBody, usado para passar o objeto que virá no Body do request  */
     public Person add(@RequestBody() Person person) {
+        Person person1 = person.builder().firstName("first").lastName("last").build();
+        person1 = person1.builder().firstName("second").build();
+        person1 = person1.builder().lastName("last2").build();
+        person1 = person1.toBuilder().build();
+        person1 = person1.toBuilder().lastName("lasthree").build();
         return null;
     }
 
