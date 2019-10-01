@@ -1,8 +1,10 @@
 package br.guisi.specs.springspecs.controller;
 
 import br.guisi.specs.springspecs.entity.Person;
+import br.guisi.specs.springspecs.service.IPersonService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +15,9 @@ import java.util.List;
 @RestController
 public class PersonController {
 
+    @Autowired
+    private IPersonService personService;
+
     /** Anotação para o verb GET
      * Usando sem paramâmetros para buscar todas as pessoas
      */
@@ -20,7 +25,7 @@ public class PersonController {
     /** Para documentacao com o swagger */
     @ApiOperation(value = "Retorna uma lista de pessoas", response = Iterable.class, tags = "Pessoas")
     public List<Person> getPerson(){
-        return null;
+        return this.personService.getAllPerson();
     }
 
     /**

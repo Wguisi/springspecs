@@ -1,8 +1,7 @@
 package br.guisi.specs.springspecs.entity;
 
 import br.guisi.specs.springspecs.entity.enums.GenderEnum;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.cache.annotation.Cacheable;
@@ -21,6 +20,10 @@ import javax.persistence.*;
 @Data
 /** Cria um builder para a classe. Setando toBuilder como true, mantém as antigas variáveis já setadas. */
 @Builder(toBuilder = true)
+/** Precisa para o Builder */
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+/** Precisa ter um construtor ser argumentos */
+@NoArgsConstructor
 public class Person {
 
     /** Define a chave primaria */
