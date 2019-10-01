@@ -25,8 +25,8 @@ public class Person {
 
     /** Define a chave primaria */
     @Id
-    /** Significa que a estratégia sera feita pelo tipo do campo */
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    /** Significa que a estratégia sera feita pelo provider */
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     /** Se esse item vem setado, caso o builder não crie já seta o valor definido como default */
