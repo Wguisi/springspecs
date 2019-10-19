@@ -8,6 +8,9 @@ import org.springframework.cache.annotation.Cacheable;
 
 import javax.persistence.*;
 
+
+// from Person where
+
 /** Não precisa setar, só coloquei pra lembrar como poderia desabilitar o second-level-cache */
 @Cacheable
 /** Definição da estratégia de cache. NONSTRICT_READ_WRITE garante menos rigidez nas coleções */
